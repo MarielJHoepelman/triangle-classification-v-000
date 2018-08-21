@@ -11,7 +11,7 @@ class Triangle
     if is_illegal?
       raise TriangleError
     end
-    
+
     if @l1 == @l2 && @l2 == @l3
       :equilateral
     elsif @l1 == @l2 || @l2 == @l3 || @l1 == @l3
@@ -23,12 +23,6 @@ class Triangle
 
   def is_illegal?
     (@l1 <= 0 || @l2 <= 0 || @l3 <= 0)
-      ||
-    (@l1 < @l3 && @l2 < @l3 && @l1 == @l2)
-      ||
-    (@l1 < @l2 && @l3 < @l2 && @l1 == @l3)
-      ||
-    (@l1 > (@l2 + @l3))
   end
 
   class TriangleError < StandardError
