@@ -10,8 +10,7 @@ class Triangle
   def kind
     if @l1 == @l2 && @l2 == @l3
       :equilateral
-    end
-    if @l1 == @l2 || @l2 == @l3
+    elsif @l1 == @l2 || @l2 == @l3
       :isosceles
     end
   end
