@@ -13,7 +13,7 @@ class Triangle
     elsif @l1 == @l2 || @l2 == @l3 || @l1 == @l3
       :isosceles
     else
-      scalene 
+      :scalene 
     end
   end
 end
