@@ -14,6 +14,5 @@ class Triangle
     if @l1 == @l2 || @l2 == @l3
       :isosceles
     end
-
   end
 end
