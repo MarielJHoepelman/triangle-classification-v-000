@@ -6,4 +6,11 @@ class Triangle
     @l2 = l2
     @l3 = l3
   end
+
+  def kind
+    if @l1 == @l2 == @l3
+      :equilateral
+    end
+  
+  end
 end
