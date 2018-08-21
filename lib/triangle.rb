@@ -11,6 +11,9 @@ class Triangle
     if @l1 == @l2 && @l2 == @l3
       :equilateral
     end
+    if @l1 == @l2 || @l2 == @l3
+      :isosceles
+    end
 
   end
 end
