@@ -8,15 +8,10 @@ class Triangle
   end
 
   def kind
-    if @l1 <= 0 || @l2 <= 0 || @l3 <= 0
-      raise TriangleError
-    elsif @l1 < @l3 && @l2 < @l3 && @l1 == @l2
-      raise TriangleError
-    elsif @l1 < @l2 && @l3 < @l2 && @l1 == @l3
-      raise TriangleError
-    elsif @l1 > (@l2 + @l3)
+    if is_illegal?
       raise TriangleError
     end
+    
     if @l1 == @l2 && @l2 == @l3
       :equilateral
     elsif @l1 == @l2 || @l2 == @l3 || @l1 == @l3
@@ -27,16 +22,14 @@ class Triangle
   end
 
   def is_illegal?
-    if @l1 <= 0 || @l2 <= 0 || @l3 <= 0
-      raise TriangleError
-    elsif @l1 < @l3 && @l2 < @l3 && @l1 == @l2
-      raise TriangleError
-    elsif @l1 < @l2 && @l3 < @l2 && @l1 == @l3
-      raise TriangleError
-    elsif @l1 > (@l2 + @l3)
-      raise TriangleError
-    end
-  end 
+    (@l1 <= 0 || @l2 <= 0 || @l3 <= 0)
+      ||
+    (@l1 < @l3 && @l2 < @l3 && @l1 == @l2)
+      ||
+    (@l1 < @l2 && @l3 < @l2 && @l1 == @l3)
+      ||
+    (@l1 > (@l2 + @l3))
+  end
 
   class TriangleError < StandardError
   end
